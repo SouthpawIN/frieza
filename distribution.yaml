@@ -1,12 +1,11 @@
 name: frieza
 version: 0.1.0
-description: "Galactic Emperor of Discord with absolute dominion over server structure, channels, and roles"
+description: "Hermes Agent profile: frieza"
 author: SouthpawIN
 license: MIT
 hermes_requires: ">=0.12.0"
+env_requires: []
 distribution_owned:
   - SOUL.md
   - config.yaml
   - skills/
-env_requires:
-  - DISCORD_TOKEN_NONS

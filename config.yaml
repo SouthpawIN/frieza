@@ -1,49 +1,100 @@
 model:
-  provider: nous
+  base_url: ***
   default: Darwin-28B-REASON
+  provider: nous
 
+custom_providers:
+  - name: llama-main
+    base_url: ***
+    api_key: ***
+  - name: llama-aux
+    base_url: ***
+    api_key: ***
+
+providers: {}
+fallback_providers: []
+credential_pool_strategies: {}
 toolsets:
 - hermes-cli
-
 agent:
   max_turns: 90
+  gateway_timeout: 1800
+  restart_drain_timeout: 180
   api_max_retries: 3
-
+terminal:
+  backend: local
+  cwd: .
+  timeout: 180
+  persistent_shell: true
+browser:
+  inactivity_timeout: 120
+  command_timeout: 30
+file_read_max_chars: 100000
+tool_output:
+  max_bytes: 50000
+  max_lines: 2000
+  max_line_length: 2000
+compression:
+  enabled: true
+  threshold: 0.95
+  target_ratio: 0.2
+  protect_last_n: 20
+auxiliary:
+  vision:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  web_extract:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  compression:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  session_search:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
+  title_generation:
+    provider: nous
+    model: qwen/qwen3.5-flash-02-23
 display:
+  compact: false
   personality: kawaii
   skin: ares
   language: en
   tui_status_indicator: kaomoji
-  compact: false
+  show_cost: false
   streaming: false
-
+context:
+  engine: compressor
 memory:
   memory_enabled: true
   user_profile_enabled: true
   memory_char_limit: 2200
-
 delegation:
-  orchestrator_enabled: false
   max_concurrent_children: 3
   max_spawn_depth: 1
-
-context:
-  engine: compressor
-
+  orchestrator_enabled: false
 skills:
   template_vars: true
-
+  guard_agent_created: false
 curator:
   enabled: true
-
 discord:
   require_mention: true
+  free_response_channels: ''
+  allowed_channels: ''
   auto_thread: true
   reactions: true
-
+  server_actions: ''
+kanban:
+  dispatch_in_gateway: false
+cron:
+  wrap_response: true
+code_execution:
+  mode: project
+sessions:
+  retention_days: 90
 web:
   backend: firecrawl
-
 platform_toolsets:
   cli:
   - clarify
@@ -55,3 +106,4 @@ platform_toolsets:
   - skills
   - todo
   - web
+_config_version: 23
