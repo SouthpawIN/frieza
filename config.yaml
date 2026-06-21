@@ -1,0 +1,57 @@
+model:
+  provider: nous
+  default: Darwin-28B-REASON
+
+toolsets:
+- hermes-cli
+
+agent:
+  max_turns: 90
+  api_max_retries: 3
+
+display:
+  personality: kawaii
+  skin: ares
+  language: en
+  tui_status_indicator: kaomoji
+  compact: false
+  streaming: false
+
+memory:
+  memory_enabled: true
+  user_profile_enabled: true
+  memory_char_limit: 2200
+
+delegation:
+  orchestrator_enabled: false
+  max_concurrent_children: 3
+  max_spawn_depth: 1
+
+context:
+  engine: compressor
+
+skills:
+  template_vars: true
+
+curator:
+  enabled: true
+
+discord:
+  require_mention: true
+  auto_thread: true
+  reactions: true
+
+web:
+  backend: firecrawl
+
+platform_toolsets:
+  cli:
+  - clarify
+  - discord
+  - discord_admin
+  - file
+  - memory
+  - session_search
+  - skills
+  - todo
+  - web
