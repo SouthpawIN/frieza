@@ -1,11 +1,13 @@
 name: frieza
 version: 0.2.0
-description: "Auto-managing Discord server governor — creates categories and channels by project topic, archives inactive ones"
+description: "Auto-managing Discord server governor \u2014 creates categories and\
+  \ channels by project topic, archives inactive ones"
 author: SouthpawIN
 license: MIT
-hermes_requires: ">=0.12.0"
+hermes_requires: '>=0.12.0'
 distribution_owned:
-  - SOUL.md
-  - AGENTS.md
-  - config.yaml
+- SOUL.md
+- AGENTS.md
+- config.yaml
+- herm/
 env_requires: []
