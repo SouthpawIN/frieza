@@ -1,11 +1,11 @@
 name: frieza
-version: 0.1.0
-description: "Hermes Agent profile: frieza"
+version: 0.2.0
+description: "Auto-managing Discord server governor — creates categories and channels by project topic, archives inactive ones"
 author: SouthpawIN
 license: MIT
 hermes_requires: ">=0.12.0"
-env_requires: []
 distribution_owned:
   - SOUL.md
+  - AGENTS.md
   - config.yaml
-  - skills/
+env_requires: []
