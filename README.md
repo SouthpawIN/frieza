@@ -1,6 +1,6 @@
 # Frieza — Server Management & Infrastructure Automation
 
-![Frieza](https://v3b.fal.media/files/b/0a9fe83f/oPyTPsN9teym-gErpPOI4_T9KeejHs.png)
+![Frieza](https://v3b.fal.media/files/b/0a9fe98c/cjquofjkHmmA4d0hftOjI_owOvDV2u.png)
 
 ## What Frieza Does
 - **Deploys** containers and services to Coolify infrastructure
